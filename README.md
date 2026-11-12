@@ -1,1 +1,0 @@
-# newkrix.github.io

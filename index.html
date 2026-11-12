@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Newkrix: a fast, themeable Matrix client</title>
+<meta name="description" content="Newkrix is a native desktop Matrix client built with Rust and Tauri. Offline outbox, gradient themes, a voxel call room, and full moderation tools.">
+<meta property="og:title" content="Newkrix: a fast, themeable Matrix client">
+<meta property="og:description" content="A native desktop Matrix client built with Rust and Tauri.">
+<meta property="og:image" content="assets/cat-512.png">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header><div class="wrap">
+<a class="brand" href="#top"><img class="logo" src="assets/logo.svg" alt="">Newkrix</a>
+<nav><a href="#features">Features</a><a href="#more">And more</a><a href="#status">Status</a><a href="https://github.com/newkrix">GitHub</a><a class="btn primary" href="#download">Download</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<img class="cat logo" src="assets/logo.svg" alt="Newkrix cat logo">
+<h1>A Matrix client that feels <span>light</span>.</h1>
+<p class="lead">Newkrix is a native desktop client for <a href="https://matrix.org">Matrix</a>, built with Rust and Tauri. Fast to open, kind to your battery, and yours to theme.</p>
+<div class="cta"><a class="btn primary" href="https://github.com/newkrix/releases/releases/latest">Download latest release</a><a class="btn" href="#features">See what's different</a></div>
+<small>Windows and macOS builds on GitHub Releases. Free to use, works with any Matrix homeserver.</small>
+</div></div>
+
+<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0 36C240 0 480 0 720 34S1200 70 1440 30V70H0Z" fill="currentColor"/></svg></div>
+<section id="features"><div class="wrap">
+<div class="eyebrow">What sets it apart</div>
+<h2>Things we think you'll miss elsewhere</h2>
+<p class="sub">Newkrix covers the everyday Matrix basics, then goes its own way in a few places. These are the features we're proudest of.</p>
+
+<div class="feat"><div class="txt"><span class="tag">Calls</span>
+<h3>A voxel camp fire for every call</h3>
+<p>Instead of a grid of tiles, a voice room puts everyone around a camp fire as a little animal. Pick your look and it syncs across your devices and to everyone in the call.</p>
+<ul><li>Native MatrixRTC calls with end-to-end encrypted media</li><li>Interoperates with Cinny, Element Call and Element X</li><li>Flat view and pop-out window when you want a classic layout</li></ul></div>
+<div class="shot"><img src="assets/shots/call.png" alt="Voxel camp call view" loading="lazy"></div></div>
+
+<div class="feat rev"><div class="txt"><span class="tag b">Offline</span>
+<h3>Write offline. It sends when you're back.</h3>
+<p>Lose your connection mid-thought and nothing is lost. Messages, attachments, reactions, edits and deletes queue up and go out in order, even after a restart, with a bar that tells you what's waiting.</p>
+<ul><li>Retries reuse the transaction id, so nothing is sent twice</li><li>Encrypted on-disk message cache: opened rooms stay readable offline</li><li>Threads and their latest replies are cached too</li></ul></div>
+<div class="shot"><img src="assets/shots/offline.png" alt="Offline bar showing 2 messages queued" loading="lazy"></div></div>
+
+<div class="feat theme-feat"><div class="txt"><span class="tag">Themes</span>
+<h3>Your colours, not ours</h3>
+<p>Choose from 20+ gradient presets, or build your own gradient with up to five colours. Light, dark and true-black OLED looks, six accent colours, an IRC layout, and custom CSS that always wins.</p>
+<p><b>Try it:</b> click a theme and the whole site changes.</p>
+<div class="themes" id="themes" role="radiogroup" aria-label="Theme"></div></div>
+</div>
+
+<div class="feat rev"><div class="txt"><span class="tag b">Moderation</span>
+<h3>Real room administration, built in</h3>
+<p>Roles and power levels, a minimum role for every action, join rules including knock and restricted, kick, ban and mute with reasons, a banned list with unban, and the same safety warnings Element gives before you demote yourself.</p></div>
+<div class="shot"><img src="assets/shots/permissions.png" alt="Roles and permissions in room settings" loading="lazy"></div></div>
+
+<div class="feat"><div class="txt"><span class="tag">Conversation</span>
+<h3>Threads that open instantly</h3>
+<p>A thread side panel, summaries on the root message, and a per-room threads list with unread tracking. Cached locally, so they open instantly and work offline.</p></div>
+<div class="shot"><img src="assets/shots/threads.png" alt="Thread panel next to the timeline" loading="lazy"></div></div>
+</div></section>
+
+<section class="alt" id="more"><div class="wrap">
+<div class="eyebrow">And everything else</div>
+<h2>The full desktop kit</h2>
+<p class="sub">Not just novelties: a complete client you can live in.</p>
+<div class="grid">
+<div class="card"><div class="dot">🔐</div><h4>Real end-to-end encryption</h4><p>Cross-signing, emoji and QR verification, key backup, recovery key, key export and import, and trust shields.</p></div>
+<div class="card"><div class="dot">👥</div><h4>One window per account</h4><p>Add as many accounts as you like. Each keeps its own keys, cache and notifications, and switching is instant.</p></div>
+<div class="card"><div class="dot">🔎</div><h4>Search that includes encrypted rooms</h4><p>One room or all rooms, with sender, date and media filters, merging the local cache with the server.</p></div>
+<div class="card"><div class="dot">🔔</div><h4>Notifications you control</h4><p>Per-room modes, per-account channels, an inbox for invites and mentions, and quick reply from the desktop toast.</p></div>
+<div class="card"><div class="dot">✍️</div><h4>Rich messaging</h4><p>Markdown with live preview, code highlighting, math, replies, edits, pins, reactions, stickers and custom emoji packs.</p></div>
+<div class="card"><div class="dot">🕶️</div><h4>Stealth mode</h4><p>Hide typing notices and read receipts in one switch.</p></div>
+<div class="card"><div class="dot">🦀</div><h4>Rust core</h4><p>Matrix and crypto logic live in a reusable Rust core, so the engine is the same whatever the UI on top.</p></div>
+<div class="card"><div class="dot">🌍</div><h4>Your language</h4><p>English, Brazilian Portuguese and Latin American Spanish.</p></div>
+</div></div></section>
+
+<section id="status"><div class="wrap">
+<div class="eyebrow">Straight talk</div>
+<h2>Where Newkrix is today</h2>
+<div class="honest"><h3>An actively developed project</h3>
+<ul><li>Voice calls are verified on macOS and Windows 11. Linux has not been tested yet.</li>
+<li>Screen sharing and camera are still being verified on Windows and Linux.</li>
+<li>Some features, like on-device search of never-opened encrypted rooms, are still in progress.</li>
+<li>Each release lists what changed on the <a href="https://github.com/newkrix/releases/releases">releases page</a>.</li></ul></div>
+</div></section>
+
+<section class="dl" id="download"><div class="wrap">
+<img class="logo" src="assets/logo.svg" alt="" width="64" height="64" style="margin:0 auto 12px">
+<h2>Get Newkrix</h2>
+<p class="sub" style="margin:0 auto">Installers for Windows and macOS (Apple Silicon), with signed automatic updates inside the app.</p>
+<div class="cta"><a class="btn primary" href="https://github.com/newkrix/releases/releases/latest">Download from GitHub Releases</a><a class="btn" href="https://github.com/newkrix/releases/releases">All releases and changelogs</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><a class="brand" href="#top" style="font-size:16px"><img class="logo" src="assets/logo.svg" alt="" style="width:24px;height:24px">Newkrix</a>
+<span>Made with Rust and Tauri. Newkrix is not affiliated with the Matrix.org Foundation.</span>
+<div class="links"><a href="https://github.com/newkrix">GitHub</a><a href="https://github.com/newkrix/releases/releases">Releases</a><a href="https://matrix.org">matrix.org</a></div></div></footer>
+<script>
+(function(){
+var P=["#f3d4db","#fff","#d6e6f7"];
+var T=[["Cotton candy",P,0,"#e58fa8","#7fb0e3"],["Mint",["#cdebd3","#f4fbf5","#b9dfb0"],0,"#3f9a62","#7fb0e3"],["Citrus",["#f7dfb0","#fffaf0","#f1c4b0"],0,"#d9822b","#e58fa8"],["Cozy",["#d3dff7","#f7fbff","#daefe6","#e5eed3"],0,"#4a86c8","#e58fa8"],["Hanami",["#f2d8d5","#fff8f4","#d6ead1"],0,"#c4577a","#7fb0e3"],["Sunrise",["#c7a0b5","#dbc6b0","#cfc8a1"],0,"#a8555f","#7fb0e3"],["Forest",["#121a12","#2a3d2e","#3a402d","#837244"],1,"#8fc79a","#d9c27a"],["Crimson",["#6d1711","#2a0604","#000000"],1,"#ff7a6b","#f3b0b8"],["Dark",["#262626","#161616"],1,"#7fb0e3","#e58fa8"],["OLED",["#000","#000"],1,"#e58fa8","#7fb0e3"]];
+var box=document.getElementById("themes"),r=document.documentElement.style;if(!box)return;
+function apply(k,save){var t=T[k],d=t[2];
+r.setProperty("--page","linear-gradient(160deg,"+t[1].join(",")+")");
+var v=d?{"--ink":"#f4f4f5","--mute":"#b4b4bc","--line":"rgba(255,255,255,.16)","--surf":"rgba(0,0,0,.38)","--hdr":"rgba(0,0,0,.55)","--onink":"#111","--tagfg":t[3],"--tagfg2":t[4],"--shadow":"rgba(0,0,0,.5)","--logo":"invert(1)","--a1d":t[3],"--a2d":t[4]}:{"--ink":"#111","--mute":"#55565e","--line":"rgba(0,0,0,.1)","--surf":"rgba(255,255,255,.8)","--hdr":"rgba(255,255,255,.82)","--onink":"#fff","--tagfg":"color-mix(in srgb,"+t[3]+" 55%,#000)","--tagfg2":"color-mix(in srgb,"+t[4]+" 45%,#000)","--shadow":"rgba(100,120,170,.25)","--logo":"none","--a1d":t[3],"--a2d":k==0?"#3b7bbd":"color-mix(in srgb,"+t[4]+" 70%,#000)"};
+for(var p in v)r.setProperty(p,v[p]);
+r.setProperty("--a1",t[3]);r.setProperty("--a2",t[4]);r.setProperty("color-scheme",d?"dark":"light");
+[].forEach.call(box.children,function(b,i){b.setAttribute("aria-checked",i==k);b.classList.toggle("sel",i==k)});
+if(save){try{localStorage.setItem("nx-theme",k)}catch(e){}}}
+T.forEach(function(t,k){var b=document.createElement("button");b.type="button";b.className="sw";b.setAttribute("role","radio");b.innerHTML='<i style="background:linear-gradient(165deg,'+t[1].join(",")+')"></i>'+t[0];b.onclick=function(){apply(k,1)};box.appendChild(b)});
+var s=0;try{s=+localStorage.getItem("nx-theme")||0}catch(e){}apply(T[s]?s:0);})();
+</script>
+</body></html>
